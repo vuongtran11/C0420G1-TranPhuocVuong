@@ -93,10 +93,27 @@
             }else  if(address==="Quang Nam"){
                 temp+=5;
             }
+            if (renDays>7){
+                temp +=30;
+            }else if(renDays>5){
+                temp +=20;
+            }else if(renDays>2){
+                temp+=10;
+            }
+            if(typeCustomer==="Diamond"){
+                temp+=15;
+            }else if(typeCustomer==="Platium"){
+                temp+=10;
+            }else if (typeCustomer==="Gold"){
+                temp+=5;
+            }else if (typeCustomer==="Silver"){
+                temp+=2;
+            }else if(typeCustomer==="Member"){
+                temp+=0;
+            }
             alert("Total pay: "+(money*renDays-temp));
             break;
         }
-
     }
 </script>
 </body>
