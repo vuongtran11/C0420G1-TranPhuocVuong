@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>YC3.Task1.2</title>
 </head>
 <body>
 <script>
@@ -20,7 +20,20 @@
     let totalpay;
     let check=false;
 
+    let tempName=" ";
     name=prompt("Input name: ");
+    name=name.trim().toLowerCase();
+    for(let i=0;i<name.length;i++){
+        if(name.charAt(i)===" "&& name.charAt(i+1)===" "){
+            continue;
+        }
+        if(i===0 || name.charAt(i-1)===" "){
+            tempName+=name.charAt(i).toUpperCase();
+            continue;
+        }
+        tempName+=name.charAt(i);
+    }
+    name=tempName;
     do{
         cmnd=prompt("Input cmnd ");
         if(!isNaN(cmnd)){
@@ -95,7 +108,7 @@
             }
         }
         if(!check){
-            alert('RenDays khong phai so nguyen duong')
+            alert('RentDays khong phai so nguyen duong')
         }
     }while (!check)
     check=false;

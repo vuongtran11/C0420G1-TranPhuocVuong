@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+<script>
+    function temperature(temp) {
+        this.temp = temp;
+        this.celsiusToFahrenheit = function(){
+            return ((this.temp*9)/5)+32;
+        };
+        this.celsiustoKenvin = function () {
+            return (this.temp + 273.15);
+        }
+    }
+
+    let temp = parseFloat(prompt("Nhập độ C: "));
+    let a = new temperature(temp);
+    let b = a.celsiusToFahrenheit();
+    let c = a.celsiustoKenvin();
+    alert("Độ C: "+temp+
+         "\nĐộ F: "+b+
+         "\nĐộ K: "+c);
+</script>
+</body>
+</html>
