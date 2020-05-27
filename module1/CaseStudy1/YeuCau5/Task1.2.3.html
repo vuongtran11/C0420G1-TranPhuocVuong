@@ -24,6 +24,7 @@
                 break;
             }
             case 4:{
+                deleteCustomer();
                 break;
             }
             case 5:{
@@ -33,6 +34,21 @@
                 alert("Failed");
             }
         }
+    }
+    function deleteCustomer() {
+        let temp="";
+        for(let i=0; i<arrListCustomer.length;i++){
+            temp +=i +". Name: "+ arrListCustomer[i][0]+"\n";
+        }
+        let chooseDelete=parseInt(prompt(temp));
+        let check= parseInt(prompt('Are you want delete Customer.'+'\n1.Yes  2.No'));
+        if (check===1){
+            arrListCustomer.splice(chooseDelete,1);
+            alert('Ban da xoa thanh cong.')
+        }else {
+            alert('Cancel');
+        }
+        displayMainMenu();
     }
     function editCustomer() {
         let temp="";
